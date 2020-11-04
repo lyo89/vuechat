@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chat</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body>
+    
+    <div id ="app">
+      <h1>My Todoリスト
+      </h1>
+      <div class="scroll">
+       <ul class="line">
+         <li v-for="(msg,index) in msgs">
+          {{msg}}
+          <span @click="deleteitem(index)" class="command"><img src="ei-trash.png"></span>
+         </li>
+         
+       </ul>
+       </div>
+       <form @submit.prevent="additem"> 
+       <textarea class = "form" rows="1" placeholder="メッセージを入力" required v-model="Newitem"></textarea>
+      <input type="submit"  class=btn value="送信する">
+      
+
+       </form>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  
+  
+<script src="main.js"></script>
+
+
+  </body>
+</html>
